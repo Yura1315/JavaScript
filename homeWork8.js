@@ -74,6 +74,7 @@
 //    };
     
 //    obj2.getName();
+//у объекта 2 нету нэйм поэтому ундеф
 
 // 7. Что будет выведено в консоль? Ответить не запуская код
 
@@ -92,24 +93,25 @@
 //    };
 //    obj.getName();
 //    obj2.getName();
+//Загвоздка в стрелочной функции, если поменять на обычную в первой выведет имя, но во второй нет ундеф
 
 // 8. Что будет выведено в консоль? Ответить не запуская код
 
 // const obj = {
 //     name: 'Дмитрий',
 //     friend: {
-//       name: 'Владимир',
-//       getName() {
+//     name: 'Владимир',
+//     getName() {
 //         function innerGetName() {
-//           console.log(this.name);
+//             console.log(this.name);
 //         }
 //         innerGetName();
-//       },
 //     },
-//    };
+//     },
+// };
     
-//    obj.friend.getName();
-   
+// obj.friend.getName();
+
 //9. Что будет выведено в консоль? Ответить не запуская код
 
 // const obj = {
@@ -157,26 +159,24 @@
 // const object = {
 //     message: 'Hello, World!'
 //    };
-   
 //    function logMessage() {
 //     console.log(this.message); // "Hello, World!"
 //    }
 
 // object.logMessage = logMessage;
 // object.logMessage();
-   
 
 //13. Что будет выведено в консоль? Ответить не запуская код
 
 // var length = 4;
 // function callback() {
-//  console.log(this.length); // What is logged?
+//     console.log(this.length); // What is logged?
 // }
 // const object = {
-//  length: 5,
-//  method(callback) {
-//    callback();
-//  }
+//     length: 5,
+//     method(callback) {
+//         callback();
+//     }
 // };
 // object.method(callback, 1, 2);
 
@@ -282,51 +282,51 @@
 // Для обоих персонажей создайте метод attack, который рассчитывает и возвращает урон атаки путем сложения силы и ловкости, и метод fireball, который возвращает урон файерболом путем умножения интеллекта на уровень персонажа. Далее создайте метод combo, который возвращает сумму значений, которые возвращают методы  attack и fireball. 
 // После формирования объектов персонажей создайте функцию startFight, которая принимает в себя два объекта и сравнивает результаты вызовов их методов combo и возвращает строку “Победил ИМЯ_ПЕРСОНАЖА”.
 
-class MetaMan {
-    constructor(name, level, strenght, agility, intellect) {
-        this.name = name;
-        this.level = level;
-        this.strenght = strenght;
-        this.agility = agility;
-        this.intellect = intellect;
-    }
+// class MetaMan {
+//     constructor(name, level, strenght, agility, intellect) {
+//         this.name = name;
+//         this.level = level;
+//         this.strenght = strenght;
+//         this.agility = agility;
+//         this.intellect = intellect;
+//     }
 
-    attack () {
-        return this.sumAttack = this.strenght + this.agility;
-    }
+//     attack () {
+//         return this.sumAttack = this.strenght + this.agility;
+//     }
 
-    fireball () {
-        return this.sumFireball = this.intellect * this.level;
-    }
+//     fireball () {
+//         return this.sumFireball = this.intellect * this.level;
+//     }
 
-    combo () {
-        return this.sumAttack + this.sumFireball;
-    }
+//     combo () {
+//         return this.sumAttack + this.sumFireball;
+//     }
 
-}
+// }
 
-const spiderMan = new MetaMan('Spider-Man', 15, 60, 80, 90);
-const ironMan = new MetaMan('Iron man', 15, 80, 70, 115);
+// const spiderMan = new MetaMan('Spider-Man', 15, 60, 80, 90);
+// const ironMan = new MetaMan('Iron man', 15, 80, 70, 115);
 
-console.log(spiderMan);
-console.log(spiderMan.attack());
-console.log(spiderMan.fireball());
-console.log(spiderMan.combo());
-console.log(ironMan);
-console.log(ironMan.attack());
-console.log(ironMan.fireball());
-console.log(ironMan.combo());
+// console.log(spiderMan);
+// console.log(spiderMan.attack());
+// console.log(spiderMan.fireball());
+// console.log(spiderMan.combo());
+// console.log(ironMan);
+// console.log(ironMan.attack());
+// console.log(ironMan.fireball());
+// console.log(ironMan.combo());
 
-function startFight(obj1, obj2) {
-    if (obj1.combo() > obj2.combo()) {
-        return `${obj1.name} vs ${obj2.name}, победитель ${obj1.name}`;
-    } else if (obj1.combo() < obj2.combo()) {
-        return `${obj1.name} vs ${obj2.name}, победитель ${obj2.name}`;
-    } else
-    return `${obj1.name} vs ${obj2.name}, ничья`;
-}
+// function startFight(obj1, obj2) {
+//     if (obj1.combo() > obj2.combo()) {
+//         return `${obj1.name} vs ${obj2.name}, победитель ${obj1.name}`;
+//     } else if (obj1.combo() < obj2.combo()) {
+//         return `${obj1.name} vs ${obj2.name}, победитель ${obj2.name}`;
+//     } else
+//     return `${obj1.name} vs ${obj2.name}, ничья`;
+// }
 
-console.log(startFight(spiderMan, ironMan));
+// console.log(startFight(spiderMan, ironMan));
 
 
 
