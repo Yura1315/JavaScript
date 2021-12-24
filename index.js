@@ -126,10 +126,10 @@
 // sayName.call(city2);
 
 // function parLenght(a) {
-    
+
 //     return (b) => {
 //     } 
-    
+
 //     return (h) => {
 //         return a * b * h
 //     }
@@ -236,7 +236,7 @@
 //         arr = arr.slice(0, arr1.length)
 //     }
 //     arr1 = arr1.slice(0, arr.length)
-    
+
 //     let res = arr.map(function(el, i) {
 //         return el + arr1[i];
 //     });
@@ -245,3 +245,30 @@
 // }
 
 // console.log(sumArr(arr, arr1));
+
+
+// function sayName () {
+//     console.log(this.name);
+// }
+
+// const obj = {
+//     name: 'Yura',
+// }
+
+// const say = sayName.bind(obj);
+// say();
+
+// sayName.call(obj);
+
+var x = 10;
+
+function foo() {
+    var y = 20;
+
+    function bar() {
+        return z = y + x;
+    }
+    bar();
+}
+
+console.log(foo());
