@@ -260,15 +260,15 @@
 
 // sayName.call(obj);
 
-var x = 10;
+// var x = 10;
 
-function foo() {
-    var y = 20;
+// function foo() {
+//     var y = 20;
 
-    function bar() {
-        return z = y + x;
-    }
-    bar();
-}
+//     function bar() {
+//         return z = y + x;
+//     }
+//     bar();
+// }
 
-console.log(foo());
+// console.log(foo());
