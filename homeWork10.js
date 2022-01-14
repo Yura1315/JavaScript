@@ -53,7 +53,29 @@ btn.addEventListener('click', function () {
 
 ul.addEventListener('click', function(e) {
     e.target.classList.toggle('complete');
-    // let spanComplete = document.createElement('span');
-    // spanComplete.className = 'gal';
 });
+
+ul.addEventListener('click', function (e) {
+    spanCom = document.createElement('span');
+    spanCom.className = 'gal';
+    if (e.target.classList.contains('complete')) {
+        e.target.append(spanCom);
+    } else if (!e.target.classList.contains('complete')) {
+        for (it of e.target.children) {
+            console.log(it)
+            if (it.className === 'gal') {
+                it.remove();
+            }
+        }
+    }
+})
+
+
+ul.addEventListener('click', function(e) {
+    if(e.target.classList.contains('cross')) {
+        e.target.parentNode.remove();
+    } 
+})
+
+
 
